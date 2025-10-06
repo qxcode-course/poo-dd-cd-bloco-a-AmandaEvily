@@ -1,8 +1,3 @@
----
-level_one: 50
-level_mult: 1.2
----
-
 # Repositório de POO
 
 Significado das tags nas questões:
@@ -19,9 +14,7 @@ Significado das tags nas questões:
 ### BLOCO_A: Configuração de ambiente
 
 - [ ] `#git        :info`[Introdução ao git](https://github.com/qxcodepoo/arcade/blob/master/wiki/git/README.md)
-- [ ] `#github_edu :info`[Habilitando a conta Educational no Github](https://github.com/qxcodepoo/arcade/blob/master/wiki/git/github.md)
 - [ ] `#tko        :task`[Instalando e configurando o tko](https://github.com/senapk/tko?tab=readme-ov-file#instala%C3%A7%C3%A3o)
-- [ ] `#chaves_ssh :task`[Criando repositórios local em máquina física](https://github.com/qxcodepoo/arcade/blob/master/wiki/git/chaves.md)
 - [ ] `#uml_full   :info`[Relacionamentos](https://github.com/qxcodepoo/arcade/blob/master/wiki/relacionamento/README.md)
 - [ ] `#uml_mini   :info`[Relacionamentos Resumo](https://github.com/qxcodepoo/arcade/blob/master/wiki/uml/README.md)
 - [ ] `#relatorios :info`[Como fazer os códigos e relatórios](https://github.com/qxcodepoo/arcade/blob/master/wiki/relatorio/README.md)
@@ -29,6 +22,8 @@ Significado das tags nas questões:
 
 ### BLOCO_A: Práticas com o git
 
+- [ ] `#github_edu   :info`[Habilitando a conta Educational no Github](https://github.com/qxcodepoo/arcade/blob/master/wiki/git/github.md)
+- [ ] `#chaves_ssh   :task`[Criando repositórios local em máquina física](https://github.com/qxcodepoo/arcade/blob/master/wiki/git/chaves.md)
 - [ ] `@git_pratica  :task`[Prática git](https://github.com/qxcodepoo/arcade/blob/master/base/git_pratica/Readme.md)
 
 ### BLOCO_A: Treino de Algoritmos

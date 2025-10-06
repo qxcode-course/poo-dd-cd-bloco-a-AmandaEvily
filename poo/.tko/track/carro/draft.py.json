@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-06_01-57-00",
+            "content": "@@ -1190,17 +1190,16 @@\n _%7D, gas:\n- \n %7Bself.ga\n@@ -1209,17 +1209,16 @@\n 1f%7D, km:\n- \n %7Bself.km\n",
+            "lines": "67"
+        },
+        {
+            "label": "2025-10-06_01-57-19",
+            "content": "@@ -135,32 +135,34 @@\n f.gas: float = 0\n+.0\n %0A        self.ga\n",
+            "lines": "67"
+        },
+        {
+            "label": "2025-10-06_01-57-39",
+            "content": "@@ -134,18 +134,20 @@\n lf.gas: \n-in\n+floa\n t = 0%0A  \n@@ -169,17 +169,21 @@\n ax: \n-in\n+floa\n t = 100\n+.0\n %0A   \n@@ -498,18 +498,20 @@\n amount: \n-in\n+floa\n t):%0A    \n@@ -634,18 +634,20 @@\n stance: \n-in\n+floa\n t):%0A    \n@@ -1621,18 +1621,20 @@\n ar.fuel(\n-in\n+floa\n t(args%5B1\n@@ -1688,18 +1688,20 @@\n r.drive(\n-in\n+floa\n t(args%5B1\n",
+            "lines": "67"
+        },
+        {
+            "label": "2025-10-06_02-03-38",
+            "content": "@@ -1104,16 +1104,19 @@\n istance:\n+.0f\n %7D km%22)%0A%0A\n@@ -1189,16 +1189,19 @@\n elf.gas:\n+.1f\n %7D, km: %7B\n",
+            "lines": "67"
+        },
+        {
+            "label": "2025-10-06_02-04-35",
+            "content": "@@ -1157,17 +1157,16 @@\n  f%22pass:\n- \n %7Bself.pa\n",
+            "lines": "67"
+        },
+        {
+            "label": "2025-10-06_02-05-01",
+            "content": "class Carro: \n    def __init__(self):\n        self.pass_: int = 0\n        self.km: float = 0\n        self.passMax: int = 2\n        self.gas: int = 0\n        self.gasMax: int = 100\n    \n    def enter(self):\n        if self.pass_ < self.passMax: self.pass_ += 1\n        else:\n            print(\"fail: limite de pessoas atingido\")\n\n    def leave(self):\n        if self.pass_ > 0:\n            self.pass_ -= 1\n        else: \n            print(\"fail: nao ha ninguem no carro\")\n\n    def fuel(self, amount: int):\n        self.gas += amount\n        if self.gas > self.gasMax:\n            self.gas = self.gasMax\n\n    def drive(self, distance: int):\n        if self.pass_ == 0:\n            print(\"fail: nao ha ninguem no carro\")\n            return\n        if self.gas == 0:\n            print(\"fail: tanque vazio\")\n            return\n        if distance <= self.gas:\n            self.gas -= distance\n            self.km += distance\n        else: \n            possible_distance = self.gas\n            self.km += possible_distance\n            self.gas = 0\n            print(f\"fail: tanque vazio apos andar {possible_distance:} km\")\n\n    def __str__(self):\n        return f\"pass: {self.pass_}, gas: {self.gas:}, km: {self.km}\"\n    \ndef main():\n    car = Carro ()\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split()\n        cmd = args[0]\n\n        if cmd == \"end\":\n            break\n        elif cmd == \"show\":\n            print(car)\n        elif cmd == \"enter\":\n            car.enter()\n        elif cmd == \"leave\":\n            car.leave()\n        elif cmd == \"fuel\":\n            car.fuel(int(args[1]))\n        elif cmd == \"drive\":\n            car.drive(int(args[1]))\n        else:\n            print(\"fail: coamndo invalido\")\n\nmain()",
+            "lines": "67"
+        }
+    ]
+}

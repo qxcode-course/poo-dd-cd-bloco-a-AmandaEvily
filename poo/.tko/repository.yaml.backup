@@ -8,11 +8,15 @@ database: database
 expanded:
 - campanha-principal
 - bloco_b-primeiras-classes
-tasks: {}
+tasks:
+  toalha: '{guide:s, study:60}'
+  animal: '{human:s, alone:5, study:60}'
+  carro: '{human:s, study:60}'
+  calculadora: '{human:s, study:60}'
 flags:
-  quests: 0
-  tracks: 0
-  tasks: 0
-  graph: 0
+  quests: 1
+  tracks: 1
+  tasks: 1
+  graph: 1
   xray: 0
-index: toalha
+index: calculadora

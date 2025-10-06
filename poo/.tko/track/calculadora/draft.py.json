@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-06_02-36-22",
+            "content": "@@ -906,17 +906,17 @@\n isplay:.\n-1\n+2\n f%7D, batt\n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-10-06_02-36-51",
+            "content": "@@ -906,17 +906,17 @@\n isplay:.\n-2\n+1\n f%7D, batt\n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-10-06_02-37-00",
+            "content": "@@ -180,16 +180,17 @@\n ge(self,\n+ \n value: i\n@@ -223,17 +223,16 @@\n += value\n- \n %0A       \n@@ -832,9 +832,11 @@\n  = a\n-/\n+ / \n b%0A%0A \n@@ -937,20 +937,16 @@\n ttery%7D%22%0A\n-    \n %0Adef mai\n@@ -1059,25 +1059,24 @@\n split()%0A\n-%0A\n         \n if args%5B\n@@ -1067,26 +1067,29 @@\n         \n-if\n+cmd =\n  args%5B0%5D\n  == %22end\n@@ -1076,24 +1076,40 @@\n md = args%5B0%5D\n+%0A%0A        if cmd\n  == %22end%22:%0A \n@@ -1142,21 +1142,16 @@\n lif \n-args%5B0%5D\n+cmd\n  == %22\n- \n init\n@@ -1244,17 +1244,17 @@\n  print(%22\n-s\n+f\n ail: cal\n@@ -1286,31 +1286,27 @@\n        elif \n-args%5B0%5D\n+cmd\n  == %22show%22:%0A\n@@ -1338,31 +1338,27 @@\n        elif \n-args%5B0%5D\n+cmd\n  == %22charge%22\n@@ -1406,31 +1406,27 @@\n        elif \n-args%5B0%5D\n+cmd\n  == %22sum%22:%0A \n@@ -1444,17 +1444,16 @@\n calc.sum\n- \n (float(a\n@@ -1466,17 +1466,16 @@\n ), float\n- \n (args%5B2%5D\n@@ -1490,23 +1490,19 @@\n    elif \n-args%5B0%5D\n+cmd\n  == %22div\n@@ -1570,17 +1570,16 @@\n    else:\n- \n %0A       \n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-10-06_02-42-55",
+            "content": "@@ -544,32 +544,36 @@\n at):%0A        if \n+not \n self.spend_batte\n@@ -755,24 +755,28 @@\n %0A        if \n+not \n self.spend_b\n",
+            "lines": "59"
+        },
+        {
+            "label": "2025-10-06_02-43-24",
+            "content": "@@ -736,32 +736,84 @@\n          return%0A\n+        if self.spend_battery():%0A            return%0A\n         self.dis\n",
+            "lines": "59"
+        },
+        {
+            "label": "2025-10-06_02-43-38",
+            "content": "@@ -180,17 +180,16 @@\n ge(self,\n- \n value: i\n@@ -222,16 +222,17 @@\n += value\n+ \n %0A       \n@@ -544,36 +544,32 @@\n at):%0A        if \n-not \n self.spend_batte\n@@ -627,61 +627,8 @@\n  b%0A%0A\n-    # ADICIONADO: O m%C3%A9todo div, que estava faltando.%0A\n     \n@@ -748,64 +748,8 @@\n urn%0A\n-        if not self.spend_battery():%0A            return%0A\n     \n@@ -772,11 +772,9 @@\n  = a\n- / \n+/\n b%0A%0A \n@@ -875,16 +875,20 @@\n ttery%7D%22%0A\n+    \n %0Adef mai\n@@ -1005,29 +1005,27 @@\n t()%0A\n- \n+%0A\n        \n-cmd =\n+ if\n  args%5B0%5D\n %0A%0A  \n@@ -1024,24 +1024,8 @@\n s%5B0%5D\n-%0A%0A        if cmd\n  == \n@@ -1062,24 +1062,29 @@\n    elif \n-cmd\n+args%5B0%5D\n  == %22\n+ \n init%22:%0A \n@@ -1169,25 +1169,25 @@\n      print(%22\n-f\n+s\n ail: calcula\n@@ -1215,27 +1215,31 @@\n        elif \n-cmd\n+args%5B0%5D\n  == %22show%22:%0A\n@@ -1271,27 +1271,31 @@\n        elif \n-cmd\n+args%5B0%5D\n  == %22charge%22\n@@ -1343,27 +1343,31 @@\n        elif \n-cmd\n+args%5B0%5D\n  == %22sum%22:%0A \n@@ -1385,16 +1385,17 @@\n calc.sum\n+ \n (float(a\n@@ -1400,32 +1400,33 @@\n (args%5B1%5D), float\n+ \n (args%5B2%5D))%0A     \n@@ -1437,11 +1437,15 @@\n lif \n-cmd\n+args%5B0%5D\n  == \n@@ -1517,16 +1517,17 @@\n    else:\n+ \n %0A       \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-10-06_02-44-55",
+            "content": "class Calculadora:\n    def __init__(self, batteryMax: int):\n        self.battery: int = 0\n        self.batteryMax: int = batteryMax\n        self.display: float = 0.0\n\n    def charge(self, value: int):\n        self.battery += value\n        if self.battery > self.batteryMax:\n            self.battery = self.batteryMax\n\n    def spend_battery(self) -> bool:\n        if self.battery <= 0:\n            print(\"fail: bateria insuficiente\")\n            return False\n        self.battery -= 1\n        return True\n    \n    def sum(self, a: float, b: float):\n        if not self.spend_battery():\n            return\n        self.display = a + b\n\n    # ADICIONADO: O m\u00e9todo div, que estava faltando.\n    def div(self, a: float, b: float):\n        if b == 0:\n            print(\"fail: divisao por zero\")\n            return\n        if not self.spend_battery():\n            return\n        self.display = a / b\n\n    def __str__(self) -> str:\n        return f\"display = {self.display:.2f}, battery = {self.battery}\"\n\ndef main():\n    calc = None\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split()\n        cmd = args[0]\n\n        if cmd == \"end\":\n            break\n        elif cmd == \"init\":\n            calc = Calculadora(int(args[1]))\n        elif calc is None:\n            print(\"fail: calculadora nao iniciada\")\n        elif cmd == \"show\":\n            print(calc)\n        elif cmd == \"charge\":\n            calc.charge(int(args[1]))\n        elif cmd == \"sum\":\n            calc.sum(float(args[1]), float(args[2]))\n        elif cmd == \"div\":\n            calc.div(float(args[1]), float(args[2]))\n        else:\n            print(\"fail: comando invalido\")\n\nmain()",
+            "lines": "61"
+        }
+    ]
+}

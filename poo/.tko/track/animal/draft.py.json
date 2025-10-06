@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-06_00-05-01",
+            "content": "class Animal: \n    def __init__(self, species: str, sound: str):\n        self.species: str = species\n        self.sound: str = sound \n        self.age: int = 0\n\n    def grow(self, amount: int) -> None:\n        self.age += amount\n        if self.age >= 4:\n            print(f\"warning: {self.species} morreu\")\n\n    def growMax(self) -> int:\n        if self.age > 4:\n            self.age = 4\n        return 4\n    \n    def makeSound(self) -> None:\n        if self.age == 0:\n            print(\"---\")\n        elif self.age >= 4:\n            print(\"RIP\")\n        else:\n            print(self.sound)\n            \n    def __str__(self):\n        return f\"{self.species}:{self.age}:{self.sound}\"\n\ndef main():\n    animal = Animal(\"\",\"\")\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args: list[str] = line.split(\" \")\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"init\":\n            species = args[1]\n            sound = args[2]\n            animal = Animal(species, sound)\n        elif args[0] == \"show\":\n            print(animal)\n        elif args[0] == \"grow\":\n            amount: int = int(args[1])\n            animal.grow(amount)\n            animal.growMax()\n        elif args[0] == \"noise\":\n            animal.makeSound()\n\nmain()    ",
+            "lines": "49"
+        }
+    ]
+}

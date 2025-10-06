@@ -36,15 +36,22 @@ def main():
         args: list[str] = line.split(" ")
         if args[0] == "end":
             break
-        elif args[0] == "new":
+        elif args[0] == "criar":
             color = args[1]
             size = args[2]
             toalha = Towel(color, size)
-        elif args[0] == "show":
+        elif args[0] == "mostrar":
             print(toalha)
-        elif args[0] == "dry":
+        elif args[0] == "enxugar":
             amount: int = int(args[1])
             toalha.dry(amount)
+        elif args[0] == "torcer":
+            toalha.wringOut()
+        elif args[0] == "seca":
+            if toalha.wetness == 0:
+                print("sim")
+            else:
+                print("nao")
         else:
             print("fail: comando invalido")
 

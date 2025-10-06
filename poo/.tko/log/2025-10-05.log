@@ -1,0 +1,4 @@
+2025-10-05 23:23:56, MOVE, v:1, k:toalha, mode:PICK
+2025-10-05 23:24:24, EXEC, v:1, k:toalha, mode:LOCK, rate:0
+2025-10-05 23:24:27, EXEC, v:1, k:toalha, mode:LOCK, rate:0
+2025-10-05 23:25:00, MOVE, v:1, k:animal, mode:PICK

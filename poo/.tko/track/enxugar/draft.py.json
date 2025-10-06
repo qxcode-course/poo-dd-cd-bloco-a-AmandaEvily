@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-06_00-54-47",
+            "content": "@@ -764,17 +764,16 @@\n Tamanho:\n- \n %7Bself.si\n@@ -784,18 +784,16 @@\n  Umidade\n-: \n %7Bself.we\n",
+            "lines": "58"
+        },
+        {
+            "label": "2025-10-06_00-55-52",
+            "content": "class Towel:\n    def __init__(self, color: str, size: str):\n        self.color: str = color\n        self.size: str = size\n        self.wetness: int = 0\n\n    def dry(self,amount: int) -> None:\n        self.wetness += amount\n        if self.wetness >= self.getMaxWetness(): \n            print(\"toalha encharcada\")\n            self.wetness = self.getMaxWetness()\n\n    def isDry(self) -> bool:\n        return self.wetness == 0\n    \n    def wringOut(self) -> None:\n        self.wetness = 0\n\n    def getMaxWetness(self) -> int:\n        if self.size == \"P\":\n            return 10\n        if self.size == \"M\":\n            return 20\n        if self.size == \"G\":\n            return 30\n        return 0\n    \n    def __str__(self) -> str:\n        return f\"Cor: {self.color}, Tamanho: {self.size}, Umidade: {self.wetness}\"\n    \ndef main():\n    toalha = Towel(\"\",\"\")\n    while True:\n        line: str = input()\n        print(\"$\" + line)\n        args: list[str] = line.split(\" \")\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"criar\":\n            color = args[1]\n            size = args[2]\n            toalha = Towel(color, size)\n        elif args[0] == \"mostrar\":\n            print(toalha)\n        elif args[0] == \"enxugar\":\n            amount: int = int(args[1])\n            toalha.dry(amount)\n        elif args[0] == \"torcer\":\n            toalha.wringOut()\n        elif args[0] == \"seca\":\n            if toalha.wetness == 0:\n                print(\"sim\")\n            else:\n                print(\"nao\")\n        else:\n            print(\"fail: comando invalido\")\n\nmain()",
+            "lines": "58"
+        }
+    ]
+}
